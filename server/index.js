@@ -12,7 +12,7 @@ app.use(cors());
 
 app.post('/search', (req, res) => {
 
-  wiki.wikiSearch(req.body.month, req.body.day)
+  wiki.wikiSearch(req.body.month, req.body.day, req.body.param)
     .then(query => {
       res.send(query.data);
     })

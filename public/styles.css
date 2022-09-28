@@ -1,10 +1,98 @@
-form {
-  border: black solid 2px;
+body {
+  background-color: #7776BC;
+}
+
+#form-and-list {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
+form {
+  height: 10vh;
+  width: 50vw;
+  background-color: #CDC7E5;
+  border: #FFFBDB solid 2px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 5px;
+}
+
+label {
+  font-size: 20px;
+}
+
+#submit {
+  border-radius: 5px;
+  background-image: linear-gradient(#FFFBDB, white);
+  font-size: 16px;
+  height: 30px;
+  width: 75px;
+  margin-left: 8px;
+}
+
+.date {
+  border: transparent solid 2px;
+  border-radius: 5px;
+  font-size: 18px;
+  height: 25px;
+  width: 150px;
+  margin: 8px;
+  background-color: #FFFBDB;
+}
+
+select {
+  border-radius: 5px;
+  border: transparent solid 2px;
+  background-color: #FFFBDB;
+  font-size: 16px;
+  height: 30px;
+  width: 160px;
+  margin-bottom: 5px;
+  margin-top: 5px;
+}
+
 p {
   border: black solid 2px;
+  padding: 3px;
+}
+
+#loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#gear {
+  color: #FFFBDB;
+  height: 75px;
+  width: 75px;
+  margin: 10px;
+  animation: rotation 2s infinite linear;
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
+
+#title {
+  font-size: 28px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#list {
+  font-size: 16px;
+  margin: 10px;
+  border: #FFFBDB solid 2px;
+  background-color: #CDC7E5;
+  width: 50vw;
+  padding: 5px;
 }
