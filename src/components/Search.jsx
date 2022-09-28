@@ -9,15 +9,24 @@ const Search = (props) => {
   const [data, setData] = useState([]);
   const [page, setPage] = useState(10);
   const [activeGear, setActiveGear] = useState(false);
-  const [currentSearch, setCurrentSearch] = useState('');
   const [birthsTitle, setBirthsTitle] = useState('Notable People Born On');
   const [deathsTitle, setDeathsTitle] = useState('Notable People Who Died On');
   const [eventsTitle, setEventsTitle] = useState('Events That Occurred On');
   const [holidaysTitle, setHolidaysTitle] = useState('Holidays Celebrated On');
   const [title, setTitle] = useState('');
+  const [record, setRecord] = useState([]);
+  const [months, setMonths] = useState({
+    1: 'January', 2: 'February', 3: 'March', 4: 'April', 5: 'May', 6: 'June', 7: 'July',
+    8: 'August', 9: 'September', 10: 'October', 11: 'November', 12: 'December'
+  });
+  const [currentMonth, setCurrentMonth] = useState(1);
+  const [currentDay, setCurrentDay] = useState(1);
+  const [currentParam, setCurrentParam] = useState('');
+  const [searched, setSearched] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    setSearched(true);
     setActiveGear(true);
     setData([]);
 
@@ -32,8 +41,14 @@ const Search = (props) => {
         param === 'events' ? setTitle(eventsTitle) : null;
         param === 'holidays' ? setTitle(holidaysTitle) : null;
 
+        setCurrentMonth(months[month]);
+        setCurrentDay(day);
+        setCurrentParam(param);
+        record.push([month, day, param]);
+        if (record.length > 2) {
+          record.shift();
+        }
         setData(response.data[param]);
-        setCurrentSearch(response.data[param][0]);
       })
       .then(() => {
         setActiveGear(false);
@@ -65,8 +80,16 @@ const Search = (props) => {
         </select>
         <input id="submit" type="submit" value="Search"/>
       </form>
-      <List data={data.slice(0, page)} activeGear={activeGear} title={title} month={month} day={day}/>
+      <List
+        data={data.slice(0, page)} activeGear={activeGear} title={title} currentMonth={currentMonth}
+        currentParam={currentParam} currentDay={currentDay} months={months} record={record}
+        page={page} setPage={setPage}
+      />
+      <p id="default-title" style={{display: !searched ? 'block' : 'none'}}>
+        Welcome to One Day, the app that searches far and wide for things that happened on a day of your choice.
+      </p>
     </div>
+
   )
 }
 
