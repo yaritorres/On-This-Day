@@ -32,6 +32,7 @@ const Search = (props) => {
 
     axios.post('http://localhost:3000/search', {month, day, param})
       .then(response => {
+        console.log(response);
         if (!response.data[param].length) {
           alert('Please enter a valid date')
           return;
