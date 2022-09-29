@@ -7,7 +7,7 @@ import Search from './components/Search.jsx';
 const App = (props) => {
 
   return (
-    <div>
+    <div id="index">
       <Search />
     </div>
   )

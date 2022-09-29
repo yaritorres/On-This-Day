@@ -9,10 +9,6 @@ const Search = (props) => {
   const [data, setData] = useState([]);
   const [page, setPage] = useState(10);
   const [activeGear, setActiveGear] = useState(false);
-  const [birthsTitle, setBirthsTitle] = useState('Notable People Born On');
-  const [deathsTitle, setDeathsTitle] = useState('Notable People Who Died On');
-  const [eventsTitle, setEventsTitle] = useState('Events That Occurred On');
-  const [holidaysTitle, setHolidaysTitle] = useState('Holidays Celebrated On');
   const [title, setTitle] = useState('');
   const [record, setRecord] = useState([]);
   const [months, setMonths] = useState({
@@ -37,10 +33,10 @@ const Search = (props) => {
           alert('Please enter a valid date')
           return;
         }
-        param === 'births' ? setTitle(birthsTitle) : null;
-        param === 'deaths' ? setTitle(deathsTitle) : null;
-        param === 'events' ? setTitle(eventsTitle) : null;
-        param === 'holidays' ? setTitle(holidaysTitle) : null;
+        param === 'births' ? setTitle('Notable People Born On') : null;
+        param === 'deaths' ? setTitle('Notable People Who Died On') : null;
+        param === 'events' ? setTitle('Events That Occurred On') : null;
+        param === 'holidays' ? setTitle('Holidays Celebrated On') : null;
 
         setCurrentMonth(months[month]);
         setCurrentDay(day);
@@ -86,8 +82,11 @@ const Search = (props) => {
         currentParam={currentParam} currentDay={currentDay} months={months} record={record}
         page={page} setPage={setPage}
       />
-      <p id="default-title" style={{display: !searched ? 'block' : 'none'}}>
-        Welcome to One Day, the app that searches far and wide for things that happened on a day of your choice.
+      <p id="default-title" style={{display: !searched ? 'inline' : 'none'}}>
+        Welcome to One Day.
+      </p>
+      <p id="default-subtitle" style={{display: !searched ? 'inline' : 'none'}}>
+        Input your favorite month and day to get started.
       </p>
     </div>
 

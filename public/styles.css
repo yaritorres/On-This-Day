@@ -3,9 +3,33 @@ body {
 }
 
 #default-title {
+  font-family: 'Space Grotesk', sans-serif;
   color: white;
-  font-size: 40px;
+  font-size: 50px;
   width: 500px;
+  animation: fadeInTitle 3s;
+  margin: 0;
+  margin-bottom: 10px;
+}
+
+@keyframes fadeInTitle {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+#default-subtitle {
+  font-family: 'Space Grotesk', sans-serif;
+  color: white;
+  font-size: 50px;
+  width: 500px;
+  animation: fadeIn 6s;
+  margin: 0;
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  40% { opacity: 0}
+  100% { opacity: 1; }
 }
 
 #form-and-list {
@@ -39,6 +63,7 @@ label {
 
 #submit:hover {
   box-shadow: 2px 4px 5px black;
+  cursor: pointer;
 }
 
 .date {
@@ -70,16 +95,18 @@ button {
 }
 
 .list-item {
-  font-size: 20px;
-  width: 75%;
-  height: 75px;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 24px;
+  width: 70%;
   border-radius: 5px;
   background-image: linear-gradient(#2FBF71, #8CD867);
   border: white solid 2px;
-  padding: 6px;
+  padding: 8px;
+  margin: 6px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  animation: fadeIn 1s;
 }
 
 #loading {
@@ -94,7 +121,7 @@ button {
   height: 150px;
   width: 150px;
   margin-top: 100px;
-  animation: rotation 2s infinite linear;
+  animation: fadeIn 1s, rotation 2s infinite linear;
 }
 
 @keyframes rotation {
@@ -113,8 +140,10 @@ button {
 }
 
 #title {
+  font-family: 'Source Sans Pro', sans-serif;
   margin-top: 5px;
   font-size: 28px;
+  animation: fadeIn 1s;
 }
 
 #list-div {
@@ -131,15 +160,26 @@ button {
 }
 
 #prev-searches {
+  font-family: 'Source Sans Pro', sans-serif;
   margin-top: 5px;
   color: white;
   font-size: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  animation: fadeIn 1s;
 }
 
 .search-item {
+  font-family: 'Source Sans Pro', sans-serif;
   color: white;
   font-size: 20px;
+}
+
+#alert-gang {
+  margin-top: 30px;
+  font-size: 50px;
+  color: white;
+  font-family: 'Libre Barcode 128 Text', cursive;
+  animation: fadeIn 3s;
 }

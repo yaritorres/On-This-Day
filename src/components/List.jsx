@@ -7,8 +7,9 @@ const List = (props) => {
   return (
     <div id="list-div">
       {!props.data.length ?
-        <div id="loading" style={{display: props.activeGear ? null : 'none'}}>
+        <div id="loading" style={{display: props.activeGear ? null : 'none', animationPlayState: props.activeGear ? null : 'paused'}}>
           <FontAwesomeIcon id="gear" icon={faGear} />
+          <span id="alert-gang"> Powered by Alert Gang </span>
         </div> :
 
         <div id="list" style={{display: props.activeGear ? 'none' : null}}>
