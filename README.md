@@ -23,4 +23,4 @@ npm start
 You'll find the app hosted on localhost:3000.
 
 ## Short Demo Video
-![Screen_Recording_2022-09-29_at_1_11_42_PM_AdobeExpress](https://user-images.githubusercontent.com/104374620/193702566-91b7db1d-671a-464b-bc6b-86636e9429f5.gif)
+![Screen_Recording_2022-09-29_at_1_11_42_PM_AdobeExpress](https://user-images.githubusercontent.com/104374620/193702986-d875752e-b4d2-4ec5-ab42-597e45d2a181.gif)
